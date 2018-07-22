@@ -29,7 +29,7 @@ const app = compose([
 ])
 ```
 
-For projects whose host is in the URL, they can switch between `getHostFromHeader` and `getHostFromUrl`.
+For projects whose `host` is not in the header, they can switch between exported `getHostFromHeader` and `getHostFromUrl` functions, or define their own, as the third argument to `vhost(hostname, fn, getHost)`.
 
 ## TypeScript
 
