@@ -1,0 +1,62 @@
+{
+  "name": "servie-vhost",
+  "version": "0.0.0",
+  "description": "Simple virtual host middleware for Servie",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist/"
+  ],
+  "scripts": {
+    "lint": "tslint \"src/**/*.ts\" --project tsconfig.json",
+    "build": "rm -rf dist/ && tsc",
+    "specs": "jest --coverage",
+    "test": "npm run -s lint && npm run -s build && npm run -s specs",
+    "prepublish": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/serviejs/servie-vhost.git"
+  },
+  "keywords": [
+    "servie",
+    "host",
+    "routing",
+    "virtual",
+    "regexp",
+    "vhost",
+    "request",
+    "req"
+  ],
+  "author": {
+    "name": "Blake Embrey",
+    "email": "hello@blakeembrey.com",
+    "url": "http://blakeembrey.me"
+  },
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/serviejs/servie-vhost/issues"
+  },
+  "homepage": "https://github.com/serviejs/servie-vhost",
+  "devDependencies": {
+    "@types/debug": "0.0.30",
+    "@types/jest": "^23.3.0",
+    "@types/node": "^10.5.2",
+    "jest": "^23.4.1",
+    "rimraf": "^2.5.4",
+    "servie": "^3.0.0",
+    "servie-finalhandler": "^1.1.0",
+    "servie-send": "^1.1.0",
+    "throwback": "^3.0.0",
+    "tslint": "^5.9.1",
+    "tslint-config-standard": "^7.0.0",
+    "typescript": "^2.8.3"
+  },
+  "peerDependencies": {
+    "servie": ">=1"
+  },
+  "dependencies": {
+    "debug": "^3.1.0",
+    "path-to-regexp": "^2.2.0"
+  }
+}
