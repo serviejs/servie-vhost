@@ -1,6 +1,6 @@
 {
   "name": "servie-vhost",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Simple virtual host middleware for Servie",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
