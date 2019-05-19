@@ -1,7 +1,7 @@
 import debug = require("debug");
 import pathToRegexp = require("path-to-regexp");
 import { Request, Response } from "servie";
-import { parse } from "url";
+import { getURL } from "servie-url";
 
 const log = debug("servie-vhost");
 
@@ -39,7 +39,7 @@ export function vhost<T extends Request, U extends Response>(
  * Get host from `url`, useful for front-end projects.
  */
 export function getHostFromUrl(req: Request) {
-  return parse(req.url).hostname || null;
+  return getURL(req).host;
 }
 
 /**

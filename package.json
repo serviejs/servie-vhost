@@ -86,6 +86,7 @@
   },
   "dependencies": {
     "debug": "^4.1.1",
-    "path-to-regexp": "^3.0.0"
+    "path-to-regexp": "^3.0.0",
+    "servie-url": "^1.0.0"
   }
 }
