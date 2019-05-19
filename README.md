@@ -16,17 +16,17 @@ npm install servie-vhost --save
 ## Usage
 
 ```ts
-import { vhost, getHostFromUrl } from 'servie-vhost'
-import { compose } from 'throwback'
+import { vhost, getHostFromUrl } from "servie-vhost";
+import { compose } from "throwback";
 
 const app = compose([
-  vhost('admin.example.com', function (req) {
-    return send(req, 'Welcome to admin!')
+  vhost("admin.example.com", function(req) {
+    return send(req, "Welcome to admin!");
   }),
-  vhost(':subdomain.example.com', function (req) {
-    return send(req, `Welcome to ${req.vhost[0]} subdomain!`)
+  vhost(":subdomain.example.com", function(req) {
+    return send(req, `Welcome to ${req.vhost[0]} subdomain!`);
   })
-])
+]);
 ```
 
 For projects whose `host` is not in the header, they can switch between exported `getHostFromHeader` and `getHostFromUrl` functions, or define their own, as the third argument to `vhost(hostname, fn, getHost)`.
