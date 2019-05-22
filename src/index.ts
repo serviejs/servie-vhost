@@ -1,6 +1,6 @@
 import debug = require("debug");
 import pathToRegexp = require("path-to-regexp");
-import { Request, Response } from "servie";
+import { CommonRequest, CommonResponse } from "servie/dist/common";
 import { getURL } from "servie-url";
 
 const log = debug("servie-vhost");
@@ -12,7 +12,7 @@ export interface RequestVhost {
 /**
  * Create vhost routing.
  */
-export function vhost<T extends Request, U extends Response>(
+export function vhost<T extends CommonRequest, U extends CommonResponse>(
   path: pathToRegexp.Path,
   fn: (req: T & RequestVhost, done: () => Promise<U>) => U | Promise<U>,
   getHost: (req: T) => string | null | undefined = getHostFromHeader,
@@ -38,14 +38,14 @@ export function vhost<T extends Request, U extends Response>(
 /**
  * Get host from `url`, useful for front-end projects.
  */
-export function getHostFromUrl(req: Request) {
+export function getHostFromUrl(req: CommonRequest) {
   return getURL(req).host;
 }
 
 /**
  * Get host from header, useful for server-side routing.
  */
-export function getHostFromHeader(req: Request) {
+export function getHostFromHeader(req: CommonRequest) {
   return req.headers.get("host");
 }
 
